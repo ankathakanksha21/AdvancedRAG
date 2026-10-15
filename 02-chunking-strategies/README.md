@@ -15,11 +15,8 @@ So you split the document into smaller chunks. The challenge is splitting it wit
 Fixed-size and overlap chunking are the usual starting points.
 
 <p align="center">
-  <img src="images/fixed-size-chunking.png" alt="Fixed-size chunking: a 90-token document split into three 30-token chunks" width="450">
-</p>
-
-<p align="center">
-  <img src="images/overlap-chunking.png" alt="Overlap chunking: a document split into three chunks, with overlapping regions between neighbouring chunks" width="450">
+  <img src="images/fixed-size-chunking.png" alt="Fixed-size chunking: a 90-token document split into three 30-token chunks" width="400">
+  <img src="images/overlap-chunking.png" alt="Overlap chunking: a document split into three chunks, with overlapping regions between neighbouring chunks" width="400">
 </p>
 
 The two techniques below work better in real-world use cases.
