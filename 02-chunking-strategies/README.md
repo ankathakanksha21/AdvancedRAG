@@ -12,11 +12,17 @@ So you split the document into smaller chunks. The challenge is splitting it wit
   <img src="images/document-to-chunks.png" alt="A book page split into three chunks, one per paragraph" width="450">
 </p>
 
-Fixed-size and overlap chunking are the usual starting points. The two techniques below work better in real-world use cases.
+Fixed-size and overlap chunking are the usual starting points.
 
 <p align="center">
-  <img src="images/overlap-chunking.png" alt="A document split into three chunks, with overlapping regions between neighbouring chunks" width="450">
+  <img src="images/fixed-size-chunking.png" alt="Fixed-size chunking: a 90-token document split into three 30-token chunks" width="450">
 </p>
+
+<p align="center">
+  <img src="images/overlap-chunking.png" alt="Overlap chunking: a document split into three chunks, with overlapping regions between neighbouring chunks" width="450">
+</p>
+
+The two techniques below work better in real-world use cases.
 
 ## 1. Semantic chunking
 
