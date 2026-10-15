@@ -17,8 +17,8 @@ Use this when a single query needs information from multiple concepts. Instead o
 </p>
 
 <p align="center">
-  <img src="images/sub-queries.png" alt="The query split into four sub-queries, each sent to its own RAG step" width="400">
-  <img src="images/combined-answer.png" alt="The four RAG answers combined into one final answer" width="400">
+  <img src="images/sub-queries.png" alt="The query split into four sub-queries, each sent to its own RAG step" height="230">
+  <img src="images/combined-answer.png" alt="The four RAG answers combined into one final answer" height="230">
 </p>
 
 ## 2. Query rewriting
