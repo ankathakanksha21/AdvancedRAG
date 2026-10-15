@@ -1,3 +1,3 @@
 # AdvancedRAG
 
-Notes on LLMs and RAG, one folder per topic.
+Notes on RAG, one folder per topic.
