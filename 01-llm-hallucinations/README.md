@@ -7,7 +7,7 @@ Hallucination is one of the biggest problems with LLMs today. These notes cover 
 LLMs are trained on large amounts of past data, and they have a training cutoff.
 
 <p align="center">
-  <img src="images/training-cutoff.png" alt="ChatGPT saying its training data goes up to August 2025" width="600">
+  <img src="images/training-cutoff.png" alt="ChatGPT saying its training data goes up to August 2025" width="450">
 </p>
 
 When you ask about something beyond what the model knows, it usually doesn't say "I don't know." It generates the most probable answer based on the patterns it learned, and it sounds confident even when the answer is wrong.
@@ -21,13 +21,13 @@ This becomes a serious issue when you build real AI products. You're no longer o
 If the model only needs to answer from a small piece of context, pass that information in the prompt and tell it to answer only from that context.
 
 <p align="center">
-  <img src="images/prompting.png" alt="Background information (context) + prompt (usual instructions)" width="600">
+  <img src="images/prompting.png" alt="Background information (context) + prompt (usual instructions)" width="450">
 </p>
 
 **Limitation:** Context windows have limits. You can't put all your knowledge into the prompt every time.
 
 <p align="center">
-  <img src="images/context-limit.png" alt="Chat app error: maximum conversation length reached" width="600">
+  <img src="images/context-limit.png" alt="Chat app error: maximum conversation length reached" width="450">
 </p>
 
 ### 2. Fine-tuning
@@ -35,7 +35,7 @@ If the model only needs to answer from a small piece of context, pass that infor
 Retrain the model on your domain data so it learns a specific tone, behaviour, or response style. This gives you deeper control over the model.
 
 <p align="center">
-  <img src="images/fine-tuning.png" alt="Pre-trained model + training data → fine-tuning → fine-tuned model" width="600">
+  <img src="images/fine-tuning.png" alt="Pre-trained model + training data → fine-tuning → fine-tuned model" width="450">
 </p>
 
 **Limitation:** Whenever your data changes, you may have to retrain. That makes fine-tuning expensive, time-consuming, and hard to keep updated.
@@ -52,7 +52,7 @@ When a question comes in:
 The model answers from real, up-to-date information instead of guessing.
 
 <p align="center">
-  <img src="images/rag-pipeline.png" alt="RAG pipeline: structured and unstructured data → chunks → vector DB (embeddings) → retrieved chunks → response generation" width="600">
+  <img src="images/rag-pipeline.png" alt="RAG pipeline: structured and unstructured data → chunks → vector DB (embeddings) → retrieved chunks → response generation" width="450">
 </p>
 
 ## Hallucinations never reach zero
