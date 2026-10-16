@@ -12,6 +12,10 @@ Take words like man, woman, boy, and girl. If you place them in a space using fe
 
 Add another feature, like Bollywood, and words like hero, heroine, and child actor get placed accordingly.
 
+<p align="center">
+  <img src="images/3d-feature-space.png" alt="3D semantic feature space with age, gender and Bollywood axes; hero, heroine and child artist are placed alongside man, woman, boy, girl, uncle and baby" width="450">
+</p>
+
 Each point in this space is a vector: a position in the space. Once words are vectors, you can measure how similar they are by the distance between them.
 
 Models don't understand text directly. They understand numbers. Embeddings convert words into numbers in a way that preserves meaning.
