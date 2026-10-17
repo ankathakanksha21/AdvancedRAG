@@ -1,10 +1,18 @@
 # Document Parsing with Docling
 
+<p align="center">
+  <img src="images/docling-logo.png" alt="Docling logo" width="300">
+</p>
+
 Everyone talks about building better RAG. Few people talk about the data problem that comes right before it.
 
 ## The problem
 
 Your RAG pipeline needs clean, structured data. Most company data doesn't come that way. It's PDFs, Word files, PowerPoints, scanned images, spreadsheets, and tables: formats your system can't use directly.
+
+<p align="center">
+  <img src="images/complex-document.png" alt="A dense formula sheet mixing text, equations, tables and diagrams" width="450">
+</p>
 
 <p align="center">
   <img src="images/unstructured-to-structured.png" alt="Scattered unstructured data blocks turned into neatly arranged structured data" width="450">
@@ -23,6 +31,10 @@ Broken input means broken retrieval, no matter how good the rest of your system 
 ### 1. It keeps images and tables
 
 Most parsers give up on images and tables. Docling preserves them and adds text descriptions to visuals, so they're searchable like text. Every element also keeps metadata like page numbers, so you can trace exactly where an answer came from.
+
+<p align="center">
+  <img src="images/docling-layout-detection.webp" alt="A research paper page parsed by Docling, with text, picture, caption and table regions detected and labelled" width="450">
+</p>
 
 ### 2. It extracts the fields you define
 
