@@ -40,11 +40,23 @@ A RAG pipeline can break silently in seven ways. Here's how to handle each one.
 
 **Fix:** Set a hard timeout. 10 seconds is a good starting point. If it hits, fall back to a smaller, faster model instead of failing completely.
 
+<p align="center">
+  <img src="images/timeout-fix.png" alt="Vector search results → primary model; if the timeout hits, a smaller model answers instead" width="450">
+</p>
+
 ## 4. Rate limit hit
 
 **Problem:** Too many requests, and the API returns a 429. A naive RAG system forwards that error straight to the user.
 
+<p align="center">
+  <img src="images/rate-limit-error.png" alt="User query → vector search → generate response returns a confusing error message to the user" width="450">
+</p>
+
 **Fix:** Use exponential backoff: wait 2 seconds, then 4, then 8, with a maximum of 3 retries. Then handle success or failure gracefully.
+
+<p align="center">
+  <img src="images/rate-limit-fix.png" alt="LLM API call retried with backoff of 2s, 4s, then 8s, up to 3 retries, ending in success or a graceful degradation response" width="450">
+</p>
 
 ## 5. Context too long
 
@@ -55,6 +67,10 @@ A RAG pipeline can break silently in seven ways. Here's how to handle each one.
 1. Trim to your top 3 chunks.
 2. Summarize those chunks further.
 3. Drop older conversation history.
+
+<p align="center">
+  <img src="images/context-trim-fix.png" alt="Token estimate → if over budget, adaptive trim summarizes the context → generate response" width="450">
+</p>
 
 Or route the request to a long-context model.
 
@@ -72,6 +88,10 @@ Or route the request to a long-context model.
 - **Red line:** Reject the request.
 
 Track cumulative spend per user, per session, and per day, and set circuit breakers so nothing runs unchecked.
+
+<p align="center">
+  <img src="images/cost-runaway-fix.png" alt="Estimated price → budget check: yellow switches to a cheaper model, red rejects the request" width="450">
+</p>
 
 ## 7. Low-confidence answer
 
