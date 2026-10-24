@@ -38,6 +38,10 @@ A RAG pipeline can break silently in seven ways. Here's how to handle each one.
 
 **Problem:** The model never responds. The API stalls, no timeout is set, and the request hangs while your user stares at a spinner.
 
+<p align="center">
+  <img src="images/unknown-error.png" alt="Chat app error: Error receiving response. An unknown error has occurred." width="450">
+</p>
+
 **Fix:** Set a hard timeout. 10 seconds is a good starting point. If it hits, fall back to a smaller, faster model instead of failing completely.
 
 <p align="center">
@@ -49,7 +53,8 @@ A RAG pipeline can break silently in seven ways. Here's how to handle each one.
 **Problem:** Too many requests, and the API returns a 429. A naive RAG system forwards that error straight to the user.
 
 <p align="center">
-  <img src="images/rate-limit-error.png" alt="User query → vector search → generate response returns a confusing error message to the user" width="450">
+  <img src="images/rate-limit-error.png" alt="User query → vector search → generate response returns a confusing error message to the user" height="150">
+  <img src="images/message-limit-error.png" alt="Chat app error: Message limit reached for current model. Please try again later or switch models." height="150">
 </p>
 
 **Fix:** Use exponential backoff: wait 2 seconds, then 4, then 8, with a maximum of 3 retries. Then handle success or failure gracefully.
@@ -98,6 +103,10 @@ Track cumulative spend per user, per session, and per day, and set circuit break
 **Problem:** The LLM generates an answer that isn't grounded in what you retrieved. It sounds confident, it's wrong, and your user believes it.
 
 **Fix:** After generation, score the answer against your retrieved chunks. If the grounding score is below your threshold, don't deliver it directly. Route it to a human review queue, or at least flag it with an explicit uncertainty marker before it reaches the user.
+
+<p align="center">
+  <img src="images/grounding-check-fix.png" alt="Generate response → grounding score → human review → verified reply or flagged" width="450">
+</p>
 
 ## Where to start
 
